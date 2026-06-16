@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container, Section, SectionHeading, Button, Icon } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
 import { PageHero } from "@/components/PageHero";
@@ -228,8 +229,14 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-10 flex items-center gap-4 border-t border-border pt-8">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary font-heading text-base font-bold tracking-wide text-accent">
-                  MAS
+                <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border-2 border-accent/30 bg-primary shadow-sm">
+                  <Image
+                    src="/ceo.jpeg"
+                    alt="Muhammad Adnan Siddiqui, Managing Partner at MAS & Co"
+                    fill
+                    sizes="64px"
+                    className="object-cover object-top"
+                  />
                 </div>
                 <div>
                   <div className="font-heading text-lg font-bold text-primary">
