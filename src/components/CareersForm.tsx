@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Icon } from "@/components/ui";
 import { openings } from "@/content/data";
+import { submitWeb3Form } from "@/lib/web3forms";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -30,18 +31,13 @@ export function CareersForm() {
     setError("");
 
     try {
-      const res = await fetch("/api/careers", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+      await submitWeb3Form(`New career application — ${form.position}`, {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        position: form.position,
+        message: form.message,
       });
-      const data = await res.json();
-
-      if (!res.ok) {
-        setError(data?.error ?? "Something went wrong. Please try again.");
-        setStatus("error");
-        return;
-      }
 
       setStatus("success");
       setForm({

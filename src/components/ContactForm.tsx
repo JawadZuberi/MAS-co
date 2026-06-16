@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Icon } from "@/components/ui";
 import { services } from "@/content/data";
+import { submitWeb3Form } from "@/lib/web3forms";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -28,19 +29,13 @@ export function ContactForm() {
     setError("");
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone, service, message }),
+      await submitWeb3Form(`New contact enquiry — ${service}`, {
+        name,
+        email,
+        phone,
+        service,
+        message,
       });
-      const data = (await res.json().catch(() => ({}))) as {
-        ok?: boolean;
-        error?: string;
-      };
-
-      if (!res.ok || !data.ok) {
-        throw new Error(data.error || "Something went wrong. Please try again.");
-      }
 
       setStatus("success");
       setName("");
