@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Mail, Phone, Globe, Share2, AtSign } from "lucide-react";
 import { nav, site } from "@/content/site";
 import { services } from "@/content/data";
@@ -33,12 +34,19 @@ export function Footer() {
 
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div className="lg:pr-6">
-          <div className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 font-heading text-lg font-bold text-white">
-              M
-            </span>
-            <span className="font-heading text-lg font-bold text-white">{site.name}</span>
-          </div>
+          <Link
+            href="/"
+            className="inline-flex items-center rounded-xl bg-white px-4 py-3 shadow-sm"
+            aria-label={`${site.name} — home`}
+          >
+            <Image
+              src="/logo.jpg"
+              alt={`${site.name} — Chartered Accountants`}
+              width={731}
+              height={340}
+              className="h-11 w-auto"
+            />
+          </Link>
           <p className="mt-6 text-sm leading-relaxed text-white/50">
             A leading Pakistan-based chartered accountancy and business advisory firm delivering
             world-class financial solutions since {site.foundedYear}.

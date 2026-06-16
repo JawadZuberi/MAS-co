@@ -34,6 +34,9 @@ dev*.log
 # local tooling
 .claude/
 
+# stray pasted originals (renamed to logo.jpg / hero-office.jpg)
+public/WhatsApp Image*
+
 # env files (can opt-in for committing if needed)
 .env*
 

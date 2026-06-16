@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container, Section, SectionHeading, Eyebrow, Button, Icon } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/content/site";
@@ -33,7 +34,21 @@ export default function HomePage() {
     <>
       {/* 1) HERO */}
       <Section variant="navy-deep" className="overflow-hidden">
-        <div className="grid-overlay absolute inset-0 opacity-60" />
+        {/* Office photo background + navy overlay for readability */}
+        <div className="absolute inset-0">
+          <Image
+            src="/hero-office.jpg"
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center opacity-[0.22]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/85 to-navy-950/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-navy-950/40" />
+        </div>
+        <div className="grid-overlay absolute inset-0 opacity-40" />
         <Container className="relative z-10">
           <Reveal className="max-w-3xl">
             <Eyebrow light>Chartered Accountants • Karachi</Eyebrow>

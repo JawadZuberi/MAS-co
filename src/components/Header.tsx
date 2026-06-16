@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { nav, site } from "@/content/site";
@@ -27,16 +28,15 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6 lg:h-20">
-        <Link href="/" className="group flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-lg navy-section font-heading text-lg font-bold text-white">
-            M
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-heading text-lg font-bold text-primary">{site.name}</span>
-            <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">
-              Chartered Accountants
-            </span>
-          </span>
+        <Link href="/" className="group flex items-center" aria-label={`${site.name} — home`}>
+          <Image
+            src="/logo.jpg"
+            alt={`${site.name} — Chartered Accountants`}
+            width={731}
+            height={340}
+            priority
+            className="h-10 w-auto lg:h-12"
+          />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
