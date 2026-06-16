@@ -121,6 +121,48 @@ export const clients = [
   "Meridian Holdings",
 ];
 
+export type InternationalClient = { name: string; region: string };
+
+export const internationalClients: InternationalClient[] = [
+  { name: "KPMG Professional Services", region: "KSA" },
+  { name: "Axiom World", region: "Ireland / KSA" },
+];
+
+export const domesticClients: string[] = [
+  "5G Healthcare Private Limited",
+  "A.A Quality Builders",
+  "AG Petroleum",
+  "Ahmed Foods Private Limited",
+  "Cart PK Private Limited",
+  "Clover Lubricant Private Limited",
+  "Digit n Bytes Private Limited",
+  "DIN Capital Limited",
+  "Dynamic Supply Chain Private Limited",
+  "Ease Tec Private Limited",
+  "EatOye Private Limited",
+  "Fajr Construction Company Private Limited",
+  "G.I Enterprises Private Limited",
+  "GIGI Industries Private Limited",
+  "Global Outsourcing Service Private Limited",
+  "Good Luck Private Limited",
+  "International Brands Limited",
+  "Jade E Services Pakistan Private Limited – Daraz.pk",
+  "Mastermind Fide Chess Academy Private Limited",
+  "Maxco Private Limited",
+  "Mehran Enterprise Private Limited",
+  "MG Media Private Limited",
+  "MK Friends Private Limited",
+  "My Foods Brands Private Limited",
+  "Nash Advertising Private Limited",
+  "Paramount Commodities Private Limited",
+  "Pakistan Bank's Association Employees' Gratuity Fund",
+  "Pakistan Bank's Association Employees' Provident Fund",
+  "Pakistan Economic Association",
+  "S2 Consulting Private Limited",
+  "Tameer Ghar Private Limited",
+  "Trust Securities & Brokerage Limited",
+];
+
 export const stats = [
   { value: "220+", label: "Corporate Clients" },
   { value: "20+", label: "Industries Served" },

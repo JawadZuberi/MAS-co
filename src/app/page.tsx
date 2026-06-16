@@ -3,7 +3,16 @@ import Image from "next/image";
 import { Container, Section, SectionHeading, Eyebrow, Button, Icon } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/content/site";
-import { services, industries, whyChooseUs, clients, stats, testimonials } from "@/content/data";
+import {
+  services,
+  industries,
+  whyChooseUs,
+  clients,
+  stats,
+  testimonials,
+  internationalClients,
+  domesticClients,
+} from "@/content/data";
 
 export const metadata: Metadata = {
   title: "MAS & Co — Chartered Accountants & Business Advisory in Karachi",
@@ -277,6 +286,62 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
+        </Container>
+      </Section>
+
+      {/* 6b) PRESTIGIOUS CLIENTS */}
+      <Section variant="navy-deep" className="overflow-hidden">
+        <div className="grid-overlay absolute inset-0 opacity-30" />
+        <Container className="relative z-10">
+          <Reveal>
+            <SectionHeading
+              center
+              light
+              eyebrow="Our Clients"
+              title="Some of Our Most Prestigious Clients"
+              subtitle="A trusted advisor to leading international firms and a broad portfolio of respected companies and institutions across Pakistan."
+            />
+          </Reveal>
+
+          {/* International */}
+          <Reveal className="mt-14">
+            <h3 className="flex items-center gap-3 font-heading text-xl font-bold text-white">
+              <Icon name="Globe2" className="h-5 w-5 text-accent" />
+              Our International Clients
+            </h3>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              {internationalClients.map((c) => (
+                <div
+                  key={c.name}
+                  className="glass card-hover flex items-center justify-between gap-4 rounded-xl px-6 py-5"
+                >
+                  <span className="font-body font-medium text-white">{c.name}</span>
+                  <span className="shrink-0 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 font-mono text-xs uppercase tracking-wider text-accent-soft">
+                    {c.region}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          {/* Domestic */}
+          <Reveal className="mt-12">
+            <h3 className="flex items-center gap-3 font-heading text-xl font-bold text-white">
+              <Icon name="Building2" className="h-5 w-5 text-accent" />
+              Our Domestic Clients <span className="text-white/50">(Pakistan)</span>
+            </h3>
+            <div className="mt-6 grid gap-x-6 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
+              {domesticClients.map((name) => (
+                <div
+                  key={name}
+                  className="flex items-start gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-white/5"
+                >
+                  <Icon name="Check" className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                  <span className="text-sm leading-relaxed text-white/75">{name}</span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </Container>
       </Section>
 
