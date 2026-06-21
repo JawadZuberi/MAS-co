@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 const mono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://masandco.com"),
+  metadataBase: new URL("https://masfirms.com"),
   title: {
     default: `${site.name} — Chartered Accountants & Business Advisory`,
     template: `%s | ${site.name}`,

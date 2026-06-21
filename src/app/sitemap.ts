@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
-const baseUrl = "https://masandco.com";
+const baseUrl = "https://masfirms.com";
 
 const routes = [
   "",
