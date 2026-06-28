@@ -8,7 +8,7 @@
  * to the address you verified, nothing else.
  */
 export const WEB3FORMS_ACCESS_KEY =
-  process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "YOUR_WEB3FORMS_ACCESS_KEY";
+  process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "5fc9366e-1f0b-4028-983c-d52f46f22ee5";
 
 export async function submitWeb3Form(subject: string, fields: Record<string, string>) {
   const res = await fetch("https://api.web3forms.com/submit", {
