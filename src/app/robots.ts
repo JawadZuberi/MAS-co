@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://masfirms.com/sitemap.xml",
+    sitemap: "https://masfirmsglobal.com/sitemap.xml",
   };
 }
